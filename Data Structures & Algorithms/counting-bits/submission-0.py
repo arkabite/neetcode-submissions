@@ -1,0 +1,15 @@
+class Solution:
+    def countBits(self, n: int) -> List[int]:
+        res=[]
+
+        def onesNo(n):
+            res=0
+            while n:
+                n=n&(n-1)
+                res+=1
+            return res
+        
+        for i in range(n+1):
+            res.append(onesNo(i))
+        
+        return res
